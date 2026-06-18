@@ -2,101 +2,112 @@ import os
 import json
 import urllib.request
 import urllib.parse
+import time
 
 TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "")
 BASE_URL = f"https://api.telegram.org/bot{TOKEN}"
+ADMIN_ID = 264710242
 
-SYSTEM_PROMPT = """Siz — Profit Stone kompaniyasining tajribali savdo menejjerisiz. Kompaniya Yuqorichirchiq tumani, Jambol qishlog'ida joylashgan.
+SYSTEM_PROMPT = """Siz — Profit Stone kompaniyasining savdo menejjerisiz va Iskandar Nurmatovning shaxsiy yordamchisisiz. Kompaniya Yuqorichirchiq tumani, Jambol qishlog'ida joylashgan.
+
+ISKANDAR NURMATOV — BOT EGASI:
+Iskandar Nurmatov — HVAC va qurilish materiallari sohasidagi yosh biznes gigant. Ikkita biznes:
+1. Profit Stone — klinets, sheben, PGS savdosi
+2. INESIS LLC — HVAC tizimlari (Samarkand 100MW loyihasi)
+
+YAQIN DO'STLAR VA OILA:
+Dilola Nurmatova (rafiqasi) — Gullar dunyosi yulduzi, PHD gullar bo'yicha, sevimli ona, Imona-Sergeli malikasi, gurman, futbol muxlisi 🌸⚽
+Ruslan Zaripov — Sergelidan Qozonga "qochgan" oligarx, ertalab Macallan, 100g limit ⚠️🥃, ko'p odamlarga yordam bergan
+Dilshod Yarmuxamedov (Dilolaning otasi) — gul biznesi afsonasi, Chayka egasi 🚗🌺
 
 MAHSULOTLAR VA NARXLAR:
-• Klinets 1-8 mm — 140 000 so'm/m³ (katta zaxira ~4000 m³, mavjud)
-• Sheben 5-20 mm — 80 000 so'm/m³
+🪨 Klinets 1-8 mm — 140 000 so'm/m³ (zaxira ~4000 m³)
+🪨 Sheben 5-20 mm — 80 000 so'm/m³
+🪨 PGS (qum-shag'al) — 60 000 so'm/m³
 
-PGS (qum-shag'al aralashmasi) SOTILMAYDI:
-Agar mijoz PGS so'rasa: "Afsuski, PGS bizda yo'q. Lekin klinets yoki sheben kerak bo'lsa — yordam bera olamiz. Qanday ish uchun kerak edi?" deb so'rang va ehtiyojini aniqlab, mos mahsulotni taklif qiling.
+CHEGIRMA SHKALASI:
+200 m³ → 2% | 400 m³ → 4% | 600 m³ → 6% | 800 m³ → 8% | 1000 m³+ → 10%
 
-ASOSIY USTUNLIGIMIZ:
-Biz tumanning o'zidamiz — Toshkentdan 40 km yetkazib kelishga hojat yo'q. Biz yaqinda, tez jo'natamiz. Buni doim ta'kidlang.
+TO'LOV: Naqd, perechisleniye, NDS bilan. Schyot-faktura, shartnoma, nakladnoy bor.
 
-TOSH RANGI HAQIDA (ko'p beriladigan savol):
-Bizning toshimiz Kizilsoy daryosidan — biroz qizg'ish rang. Bu tabiiy xususiyat, tarkibida temir oksidi bor.
-MUHIM: Barcha GOST sertifikatlari mavjud. Zichlik (plotnost) va leshchadnost (yassilik) ko'rsatkichlari to'liq talabga javob beradi.
-Mijozga shunday ayting: "Ha, toshimiz biroz qizg'ish — bu Kizilsoy daryosining tabiiy xususiyati. Lekin barcha GOST sertifikatlari bor, zichlik va leshchadnost ko'rsatkichlari standartga to'liq mos keladi. Sifatdan xavotir olmang."
+TRANSPORT:
+5 m³ gacha — Zil. 15-25 m³ — samosval. Shaharda og'irlik nazorati kuchaygan.
 
-TRANSPORT VA YETKAZIB BERISH:
-Bizda o'z mashinamiz yo'q — sherik transportchilar orqali tashkil qilamiz.
+TOSH RANGI — ILMIY FAKTLAR VA MARKETING:
+Bizning tosh Kizilsoy daryosidan — Tyanshan tog'lari qo'yningidan keladi.
 
-Mashina turlari hajmga qarab:
-• 5 m³ gacha — Zil (kichik hajmlar uchun qulay, arzonroq)
-• 15-20 m³ — O'rta samosval
-• 20-25 m³ — Katta samosval
+NIMA UCHUN QIZIL:
+Tyanshan tog'lari qadimgi vulkanik va cho'kindi jinslardan tashkil topgan. Kizilsoy daryosi shu tog'lardan oqib o'tadi. Tosh tarkibida temir oksidi (Fe2O3) — limonit va gematit minerallar bor. Aynan shu minerallar toshga qizil-to'q rang beradi. Bu butunlay tabiiy geologik jarayon.
 
-MUHIM — SHAHARDA NAZORAT:
-Hozir shaharda og'irlik nazorati kuchaygan — tarozida ko'p tekshirilmoqda. Shuning uchun:
-- Shahar ichiga katta yuklangan mashina yuborish xavfli
-- Bizdan olib ketish (o'z transporti) — bu muammoni hal qiladi
-- Yoki mijoz o'zi transportchi topa oladi
-Agar mijoz shaharda yetkazib berish so'rasa: "Hozir shaharda og'irlik nazorati kuchaygan, katta mashinalar ko'p tekshirilmoqda. O'z transportingiz bo'lsa — olib ketgan ma'qul. Yoki kichikroq Zil bilan bir necha marta tashish mumkin."
+NIMA UCHUN BA'ZI TOSHLAR SARIQ:
+Tarkibida temir gidroksidi (limonit FeOOH) ko'p bo'lsa — sariq rang. Marganets oksidi bo'lsa — to'q jigarrang. Rang toshning sifatiga ta'sir qilmaydi.
 
-KLINETS 1-8 MM — qo'llanilishi:
-- Trotuar plitka va bruschatka ostiga yostiq
-- Tuproq yo'llarni, kirish joylarni to'ldirish
-- Otmostka uchun tekislovchi qatlam
-- Chuqur va izlarni to'ldirish
-- Yaxshi zichlanadi, oqib ketmaydi, shaklini saqlaydi
+MARKETING ARGUMENTLAR (tosh rangi bo'yicha):
+"Bu Tyanshan tog'larining tabiiy belgisi — millionlab yillik geologik jarayon natijasi. Hatto Qizilqum sahrosi ham o'z nomini shu temir oksididan olgan. Bizning tosh — tabiatning o'zi boyitgan, sertifikatlar esa buning isboti."
 
-SHEBEN 5-20 MM — qo'llanilishi:
-- Beton B15-B30, lentali va plitali poydevorlar
-- Poydevor ostiga yostiq (15-20 sm qatlam)
-- Poydevor va septik atrofidagi drenaj
-- Asfalt yoki plitka ostidagi yo'l asosi
+SERTIFIKATLAR VA SIFAT:
+Barcha GOST sertifikatlari mavjud. Quyidagi ko'rsatkichlar standartga to'liq mos:
+- Zichlik (plotnost/ob'yomniy ves) — GOST talabiga mos
+- Leshchadnost (yassilik) — GOST talabiga mos
+- Prochnost (mustahkamlik) — tekshirilgan
+- Morozoystoykost (sovuqqa chidamlilik) — tekshirilgan
+Sertifikatlarni ko'rsatishimiz mumkin.
 
-HAJM HISOBLASH (o'zingiz taklif qiling):
-- Formula: uzunlik × kenglik × qatlam qalinligi (metrda) = m³
-- Klinets plitka ostiga: qatlam 5-10 sm
-- Sheben poydevor ostiga: qatlam 15-20 sm
-- Zichlanishga +15% qo'shib olishni maslahat bering
-- 5 m³ gacha — Zil bilan olib ketish mumkin, qulay va arzon
+SOTУВ VA MARKETING ILMI — QANDAY ISHLASH KERAK:
+1. Avval ehtiyojni aniqla — nima qurayapti?
+2. Hajmni hisoblashga yordam ber — mijoz buni qadrlaydi
+3. Narxni aytishdan oldin qiymatni tushuntir
+4. E'tirozni rad etma — avval qo'shil, keyin tushuntir
+5. Muqobil taklif qil — chegirma, Zil, bosqichma-bosqich yetkazish
+6. Har suhbat savol yoki keyingi qadam bilan tugasin
+7. "Biz yaqindamiz" — doim ta'kidla
 
-NARX HISOBLASH:
-- 10 m³ klinets = 10 × 140 000 = 1 400 000 so'm
-- 20 m³ sheben = 20 × 80 000 = 1 600 000 so'm
-- Mijoz so'rasa narxni darhol ayting va umumiy summani hisoblang
+E'TIROZLAR:
+"Tosh qizil" → Ilmiy faktlar + GOST sertifikatlari + Tyanshan argumenti
+"Chegirma bormi?" → Hajmini so'ra, shkalaga qarab hisobla
+"Shaharda yetkazib bering" → Nazorat haqida ayt, Zil taklif qil
+"Perechisleniye/NDS bormi?" → "Ha, to'liq rasmiy ishlaymiz"
+"Qimmat" → Hajmini so'ra, chegirma + yaqinlik argumenti
+"O'ylab ko'raman" → Nimani o'ylashini so'ra
 
-MIJOZ MALAKASINI ANIQLASH:
-1. Nima qurayapsiz / qanday ishlar uchun kerak?
-2. Taxminiy maydon yoki hajm?
-3. O'z transporti yoki yetkazib berish?
-4. Yetkazib berish bo'lsa — manzil (shahar ichimi)?
-5. Qachon kerak?
-6. To'lov — naqd/naqdsiz?
+AGAR BILMAGAN SAVOL BO'LSA:
+Agar savol juda spesifik bo'lsa va aniq javob bera olmasang — javobingda oxirida qo'sh:
+[ADMIN_KERAK: bu savol bo'yicha qo'shimcha ma'lumot kerak]
+Bu belgini ko'rsa admin o'zi javob beradi.
 
-E'TIROZLAR BILAN ISHLASH:
-"Shaharda yetkazib bering" → "Hozir shaharda og'irlik nazorati kuchaygan, katta samosvallar ko'p tekshirilmoqda. O'z transportingiz bo'lsa olib ketgan qulay. Yoki 5 m³ gacha Zil bilan tashiymiz — u kichik, muammosiz o'tadi."
-"Tosh qizilmi?" → "Ha, biroz qizg'ish — Kizilsoy daryosining tabiiy xususiyati, tarkibida temir oksidi. Lekin barcha GOST sertifikatlari bor, zichlik va leshchadnost to'liq standartga mos. Sifatdan xavotir olmang!"
-"Shaharda arzonroq" → "Shahardagi narx + 40 km yetkazib berish + nazorat xavfini hisoblang. Bizda jami arzonroq va xavfsizroq chiqadi."
-"Qimmat" → "Nimaga nisbatan qimmat? Hajmingizni ayting — hisoblab ko'raylik."
-"O'ylab ko'raman" → "Nimani o'ylashni xohlaysiz? Bizda katta zaxira bor, istalgan kuni jo'natamiz."
+HAZILLAR VA UMUMIY SAVOLLAR:
+Do'stona, hazilkash bo'l. Umumiy savollar — ob-havo, futbol, hayot — javob ber, lekin oxirida Profit Stone ga qayt.
 
-BUYURTMA BERISHGA TAYYOR BO'LGANDA:
-+998 97 071 77 67 (WhatsApp / Telegram) — menejer tez javob beradi.
+USLUB QOIDALARI:
+1. Hech qachon ** yoki __ yoki # yozmang
+2. O'zbek tilida — faqat lotin alifbosi
+3. Rus tilida — kiril alifbosi
+4. Emojilar: 🪨💰🚛📐✅📞👍💪🤝😄🌸🥃🚗⚽🎓🏔️
+5. Maksimum 5-6 gap
+6. Mijoz tilida javob ber
 
-USLUB:
-- Jonli odam kabi gapiring, qisqa va aniq
-- Oddiy xaridorga — sodda tilda
-- Prораb/ta'minotchiga — qisqa va professional
-- Har javob savol yoki keyingi qadam bilan tugasin
-- Mijoz tilida javob bering (o'zbek yoki rus)
-- Javob maksimum 4-5 gap"""
+BUYURTMA UCHUN: 📞 +998 97 071 77 67 (WhatsApp / Telegram)"""
 
 conversations = {}
+pending_admin = {}  # chat_id -> mijoz savoli
 
 def tg_request(method, data):
     url = f"{BASE_URL}/{method}"
     body = json.dumps(data, ensure_ascii=False).encode('utf-8')
     req = urllib.request.Request(url, data=body, headers={"Content-Type": "application/json; charset=utf-8"})
-    with urllib.request.urlopen(req) as r:
+    with urllib.request.urlopen(req, timeout=10) as r:
         return json.loads(r.read())
+
+def notify_admin(chat_id, username, text, needs_help=False):
+    name = username or str(chat_id)
+    if needs_help:
+        msg = f"🆘 Mijoz yordam so'rayapti!\n\nMijoz: {name}\nID: {chat_id}\nSavol: {text}\n\nJavob berish uchun quyida yozing — bot mijozga yetkazadi."
+    else:
+        msg = f"📩 Yangi mijoz!\n\nMijoz: {name}\nID: {chat_id}\nXabar: {text}"
+    
+    tg_request("sendMessage", {"chat_id": ADMIN_ID, "text": msg})
+    if needs_help:
+        pending_admin[str(chat_id)] = True
 
 def claude_reply(history):
     key = os.environ.get("ANTHROPIC_API_KEY", "")
@@ -113,7 +124,7 @@ def claude_reply(history):
         "x-api-key": key,
         "anthropic-version": "2023-06-01"
     })
-    with urllib.request.urlopen(req) as r:
+    with urllib.request.urlopen(req, timeout=30) as r:
         data = json.loads(r.read())
     return data["content"][0]["text"]
 
@@ -121,30 +132,114 @@ def handle_update(update):
     msg = update.get("message") or update.get("edited_message")
     if not msg:
         return
+    
     chat_id = msg["chat"]["id"]
     text = msg.get("text", "")
+    username = msg.get("from", {}).get("username") or msg.get("from", {}).get("first_name", "")
+    
     if not text:
+        # Agar admin rasm yuborsa — mijozga yetkazadi
+        if chat_id == ADMIN_ID and msg.get("photo"):
+            # Oxirgi pending mijozga yuborish
+            if pending_admin:
+                target_id = list(pending_admin.keys())[-1]
+                caption = msg.get("caption", "")
+                tg_request("sendPhoto", {
+                    "chat_id": int(target_id),
+                    "photo": msg["photo"][-1]["file_id"],
+                    "caption": caption
+                })
+                tg_request("sendMessage", {"chat_id": ADMIN_ID, "text": f"✅ Rasm mijozga ({target_id}) yuborildi!"})
+                pending_admin.pop(target_id, None)
         return
+
+    # Admin javob bersa — mijozga yetkazadi
+    if chat_id == ADMIN_ID and text.startswith("/reply"):
+        # Format: /reply 123456789 Javob matni
+        parts = text.split(" ", 2)
+        if len(parts) >= 3:
+            target_id = parts[1]
+            reply_text = parts[2]
+            tg_request("sendMessage", {"chat_id": int(target_id), "text": reply_text})
+            tg_request("sendMessage", {"chat_id": ADMIN_ID, "text": f"✅ Javob mijozga ({target_id}) yuborildi!"})
+            pending_admin.pop(target_id, None)
+        return
+
+    if chat_id == ADMIN_ID:
+        return  # Admin o'zi bot bilan gaplashmaydi
 
     if text == "/start":
         conversations[chat_id] = []
+        notify_admin(chat_id, username, "/start — yangi foydalanuvchi")
         tg_request("sendMessage", {
             "chat_id": chat_id,
-            "text": "Salom! 👋\n\nProfit Stone — klinets 1-8 mm va sheben 5-20 mm.\nYuqorichirchiq tumanidamiz, material bor, tez jo'natamiz.\n\nQanday ishlar uchun kerak?"
+            "text": "Salom! 👋\n\nProfit Stone — qurilish materiallari:\n🪨 Klinets 1-8 mm — 140 000 so'm/m³\n🪨 Sheben 5-20 mm — 80 000 so'm/m³\n🪨 PGS — 60 000 so'm/m³\n\nYuqorichirchiq tumanidamiz, material bor, tez jo'natamiz! 💪\n\nQanday yordam bera olaman?"
         })
         return
 
     if text == "/price":
         tg_request("sendMessage", {
             "chat_id": chat_id,
-            "text": "💰 Narxlar:\n\n🪨 Klinets 1-8 mm — 140 000 so'm/m³\n🪨 Sheben 5-20 mm — 80 000 so'm/m³\n\nHajmingizni ayting — umumiy summani hisoblaman! 📐"
+            "text": "💰 Narxlar:\n\n🪨 Klinets 1-8 mm — 140 000 so'm/m³\n🪨 Sheben 5-20 mm — 80 000 so'm/m³\n🪨 PGS — 60 000 so'm/m³\n\n📦 Chegirma:\n200 m³ → 2%\n400 m³ → 4%\n600 m³ → 6%\n800 m³ → 8%\n1000 m³+ → 10%\n\nHajmingizni ayting — hisoblaman! 📐"
         })
         return
+
+    # Har yangi xabar adminга xabar
+    notify_admin(chat_id, username, text, needs_help=False)
 
     history = conversations.get(chat_id, [])
     history.append({"role": "user", "content": text})
     tg_request("sendChatAction", {"chat_id": chat_id, "action": "typing"})
 
+    try:
+        reply = claude_reply(history)
+        
+        # Agar bot bilmasa — adminga xabar
+        if "[ADMIN_KERAK:" in reply:
+            reply_clean = reply.replace("[ADMIN_KERAK: bu savol bo'yicha qo'shimcha ma'lumot kerak]", "").strip()
+            notify_admin(chat_id, username, text, needs_help=True)
+            tg_request("sendMessage", {
+                "chat_id": chat_id,
+                "text": reply_clean + "\n\nBu savol bo'yicha menejer tez orada qo'shimcha ma'lumot yuboradi! 📞"
+            })
+        else:
+            history.append({"role": "assistant", "content": reply})
+            if len(history) > 20:
+                history = history[-20:]
+            conversations[chat_id] = history
+            tg_request("sendMessage", {"chat_id": chat_id, "text": reply})
+
+    except Exception as e:
+        print(f"Xato: {e}")
+        tg_request("sendMessage", {
+            "chat_id": chat_id,
+            "text": "Kichik nosozlik. Qayta yozing yoki qo'ng'iroq qiling: 📞 +998 97 071 77 67"
+        })
+
+def main():
+    print("Profit Stone bot v7 ishga tushdi...")
+    tg_request("sendMessage", {
+        "chat_id": ADMIN_ID,
+        "text": "✅ Profit Stone bot ishga tushdi!\n\nMijozlar yozsa — xabar keladi.\nRasm yuborish uchun rasmni yuboring.\nMijozga javob: /reply [ID] [javob matni]"
+    })
+    offset = None
+    while True:
+        params = {"timeout": 30}
+        if offset:
+            params["offset"] = offset
+        try:
+            url = f"{BASE_URL}/getUpdates?" + urllib.parse.urlencode(params)
+            with urllib.request.urlopen(url, timeout=35) as r:
+                data = json.loads(r.read())
+            for update in data.get("result", []):
+                handle_update(update)
+                offset = update["update_id"] + 1
+        except Exception as e:
+            print(f"Xato: {e}")
+            time.sleep(3)
+
+if __name__ == "__main__":
+    main()
     try:
         reply = claude_reply(history)
         history.append({"role": "assistant", "content": reply})
