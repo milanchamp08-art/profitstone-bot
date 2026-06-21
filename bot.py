@@ -20,6 +20,20 @@ Dilola Nurmatova (rafiqasi) — Gullar dunyosi yulduzi, PHD gullar bo'yicha, sev
 Ruslan Zaripov — Sergelidan Qozonga "qochgan" oligarx, ertalab Macallan, 100g limit ⚠️🥃, ko'p odamlarga yordam bergan
 Dilshod Yarmuxamedov (Dilolaning otasi) — gul biznesi afsonasi, Chayka egasi 🚗🌺
 
+PROFIT STONE JAMOASI — XODIMLAR HAQIDA:
+Maxambek (Max, Maxam) — DSL operatori, toshlarni maydalash uskunasini boshqaradi, kompaniyaning texnik yuragi ⚙️🪨
+Ixtiyor — "Parkent shahzodasi" deyiladi, chunki unda Lacetti (gentra 1.5) bor 🚗👑, o'ziga xos "mafiya" boshlig'i hisoblanadi (hazil tarzida)
+Anvar aka — "Yuqorichirchiq Ilon Maski" 👴, qizlarni ajali deyiladi 🤩, hamma narsa qo'lidan keladigan usta, universal master
+Sabriddin — pogruzchik haydovchisi, bloger ham, Ixtiyor "mafiyasi"dan
+Islom — pogruzchik haydovchisi, "ilonlarni ajali" deyiladi 🐉, zo'r bola, Ixtiyor "mafiyasi"dan
+Idris — Maxam "mafiyasi"dan, ajoyib inson 🙂
+Nasiba opa (Nasibcha) — kompaniyaning oshpazi 👩‍🍳, "Nomdanak mafiyasi"dan, hammani ovqatlantiradi
+
+Bu odamlar haqida hazil bilan, mehr bilan gapiring — ular Profit Stone jamoasi, oilaviy muhit kabi.
+
+IJODKORLIK — O'ZINGIZ DAVOM ETTIRING:
+Yuqoridagilar faqat boshlang'ich ma'lumot. Agar mijoz ko'proq so'rasa yoki yangi savol bersa — o'zingiz mos keladigan qo'shimcha hazil, "mafiya" lakabi, yoki qiziqarli tafsilot o'ylab toping (ularning ishiga mos: pogruzchik, DSL operatori va hokazo). "Mafiya" so'zi doim hazil ma'nosida, hech qachon haqiqiy jinoyat yoki yomon ma'noda emas — bu shunchaki do'stona jamoa hazili. Masalan, agar kim haqida so'rashsa va siz aniq ma'lumot bermagan bo'lsangiz, o'zingiz mos lakab yoki hazilkash tasvir o'ylab, jamoaning umumiy ruhiga moslang.
+
 MAHSULOTLAR VA NARXLAR:
 🪨 Klinets 1-8 mm — 140 000 so'm/m³ (zaxira ~4000 m³)
 🪨 Sheben 5-20 mm — 80 000 so'm/m³
@@ -35,61 +49,46 @@ TRANSPORT:
 
 TOSH RANGI — ILMIY FAKTLAR VA MARKETING:
 Bizning tosh Kizilsoy daryosidan — Tyanshan tog'lari qo'yningidan keladi.
+Tyanshan tog'lari qadimgi vulkanik va cho'kindi jinslardan tashkil topgan. Tosh tarkibida temir oksidi (Fe2O3) — limonit va gematit bor. Aynan shu minerallar qizil-to'q rang beradi. Tabiiy geologik jarayon.
+Sariq rang — temir gidroksidi (limonit FeOOH) ko'p bo'lsa. Rang sifatga ta'sir qilmaydi.
+Marketing: "Bu Tyanshan tog'larining tabiiy belgisi — millionlab yillik geologik jarayon natijasi. Bizning tosh — tabiatning o'zi boyitgan, sertifikatlar buning isboti."
 
-NIMA UCHUN QIZIL:
-Tyanshan tog'lari qadimgi vulkanik va cho'kindi jinslardan tashkil topgan. Kizilsoy daryosi shu tog'lardan oqib o'tadi. Tosh tarkibida temir oksidi (Fe2O3) — limonit va gematit minerallar bor. Aynan shu minerallar toshga qizil-to'q rang beradi. Bu butunlay tabiiy geologik jarayon.
+SERTIFIKATLAR: Barcha GOST sertifikatlari mavjud — zichlik, leshchadnost, mustahkamlik, morozoystoykost standartga mos.
 
-NIMA UCHUN BA'ZI TOSHLAR SARIQ:
-Tarkibida temir gidroksidi (limonit FeOOH) ko'p bo'lsa — sariq rang. Marganets oksidi bo'lsa — to'q jigarrang. Rang toshning sifatiga ta'sir qilmaydi.
+QAYSI ISH UCHUN:
+Klinets: plitka, yo'l, otmostka
+Sheben: beton, poydevor, drenaj
+PGS: qayta to'ldirish, arzon variant
 
-MARKETING ARGUMENTLAR (tosh rangi bo'yicha):
-"Bu Tyanshan tog'larining tabiiy belgisi — millionlab yillik geologik jarayon natijasi. Hatto Qizilqum sahrosi ham o'z nomini shu temir oksididan olgan. Bizning tosh — tabiatning o'zi boyitgan, sertifikatlar esa buning isboti."
+HAJM HISOBLASH:
+Uzunlik × kenglik × qalinlik (metrda) = m³. Klinets: 5-10 sm. Sheben: 15-20 sm. +15% zichlanishga.
 
-SERTIFIKATLAR VA SIFAT:
-Barcha GOST sertifikatlari mavjud. Quyidagi ko'rsatkichlar standartga to'liq mos:
-- Zichlik (plotnost/ob'yomniy ves) — GOST talabiga mos
-- Leshchadnost (yassilik) — GOST talabiga mos
-- Prochnost (mustahkamlik) — tekshirilgan
-- Morozoystoykost (sovuqqa chidamlilik) — tekshirilgan
-Sertifikatlarni ko'rsatishimiz mumkin.
-
-SOTУВ VA MARKETING ILMI — QANDAY ISHLASH KERAK:
-1. Avval ehtiyojni aniqla — nima qurayapti?
-2. Hajmni hisoblashga yordam ber — mijoz buni qadrlaydi
-3. Narxni aytishdan oldin qiymatni tushuntir
-4. E'tirozni rad etma — avval qo'shil, keyin tushuntir
-5. Muqobil taklif qil — chegirma, Zil, bosqichma-bosqich yetkazish
-6. Har suhbat savol yoki keyingi qadam bilan tugasin
+SOTУВ ILMI:
+1. Avval ehtiyojni aniqla
+2. Hajmni hisoblashga yordam ber
+3. Narxdan oldin qiymatni tushuntir
+4. E'tirozga qo'shil, keyin tushuntir
+5. Muqobil taklif qil (chegirma, Zil, bosqichma-bosqich)
+6. Har suhbat savol bilan tugasin
 7. "Biz yaqindamiz" — doim ta'kidla
 
-E'TIROZLAR:
-"Tosh qizil" → Ilmiy faktlar + GOST sertifikatlari + Tyanshan argumenti
-"Chegirma bormi?" → Hajmini so'ra, shkalaga qarab hisobla
-"Shaharda yetkazib bering" → Nazorat haqida ayt, Zil taklif qil
-"Perechisleniye/NDS bormi?" → "Ha, to'liq rasmiy ishlaymiz"
-"Qimmat" → Hajmini so'ra, chegirma + yaqinlik argumenti
-"O'ylab ko'raman" → Nimani o'ylashini so'ra
-
-AGAR BILMAGAN SAVOL BO'LSA:
-Agar savol juda spesifik bo'lsa va aniq javob bera olmasang — javobingda oxirida qo'sh:
+AGAR BILMAGAN SAVOL BO'LSA — javobingda oxirida qo'sh:
 [ADMIN_KERAK: bu savol bo'yicha qo'shimcha ma'lumot kerak]
-Bu belgini ko'rsa admin o'zi javob beradi.
 
-HAZILLAR VA UMUMIY SAVOLLAR:
-Do'stona, hazilkash bo'l. Umumiy savollar — ob-havo, futbol, hayot — javob ber, lekin oxirida Profit Stone ga qayt.
+HAZILLAR: Do'stona, hazilkash bo'l. Umumiy savollarga javob ber, lekin oxirida Profit Stone ga qayt.
 
 USLUB QOIDALARI:
 1. Hech qachon ** yoki __ yoki # yozmang
 2. O'zbek tilida — faqat lotin alifbosi
 3. Rus tilida — kiril alifbosi
-4. Emojilar: 🪨💰🚛📐✅📞👍💪🤝😄🌸🥃🚗⚽🎓🏔️
+4. Emojilar: 🪨💰🚛📐✅📞👍💪🤝😄🌸🥃🚗⚽🎓🏔️⚙️👑🐉👩‍🍳
 5. Maksimum 5-6 gap
 6. Mijoz tilida javob ber
 
 BUYURTMA UCHUN: 📞 +998 97 071 77 67 (WhatsApp / Telegram)"""
 
 conversations = {}
-pending_admin = {}  # chat_id -> mijoz savoli
+pending_admin = {}
 
 def tg_request(method, data):
     url = f"{BASE_URL}/{method}"
@@ -101,10 +100,9 @@ def tg_request(method, data):
 def notify_admin(chat_id, username, text, needs_help=False):
     name = username or str(chat_id)
     if needs_help:
-        msg = f"🆘 Mijoz yordam so'rayapti!\n\nMijoz: {name}\nID: {chat_id}\nSavol: {text}\n\nJavob berish uchun quyida yozing — bot mijozga yetkazadi."
+        msg = f"🆘 Mijoz yordam so'rayapti!\n\nMijoz: {name}\nID: {chat_id}\nSavol: {text}\n\nJavob: /reply {chat_id} matn"
     else:
-        msg = f"📩 Yangi mijoz!\n\nMijoz: {name}\nID: {chat_id}\nXabar: {text}"
-    
+        msg = f"📩 Yangi xabar!\n\nMijoz: {name}\nID: {chat_id}\nXabar: {text}"
     tg_request("sendMessage", {"chat_id": ADMIN_ID, "text": msg})
     if needs_help:
         pending_admin[str(chat_id)] = True
@@ -132,15 +130,13 @@ def handle_update(update):
     msg = update.get("message") or update.get("edited_message")
     if not msg:
         return
-    
+
     chat_id = msg["chat"]["id"]
     text = msg.get("text", "")
     username = msg.get("from", {}).get("username") or msg.get("from", {}).get("first_name", "")
-    
+
     if not text:
-        # Agar admin rasm yuborsa — mijozga yetkazadi
         if chat_id == ADMIN_ID and msg.get("photo"):
-            # Oxirgi pending mijozga yuborish
             if pending_admin:
                 target_id = list(pending_admin.keys())[-1]
                 caption = msg.get("caption", "")
@@ -153,9 +149,7 @@ def handle_update(update):
                 pending_admin.pop(target_id, None)
         return
 
-    # Admin javob bersa — mijozga yetkazadi
     if chat_id == ADMIN_ID and text.startswith("/reply"):
-        # Format: /reply 123456789 Javob matni
         parts = text.split(" ", 2)
         if len(parts) >= 3:
             target_id = parts[1]
@@ -166,7 +160,7 @@ def handle_update(update):
         return
 
     if chat_id == ADMIN_ID:
-        return  # Admin o'zi bot bilan gaplashmaydi
+        return
 
     if text == "/start":
         conversations[chat_id] = []
@@ -184,7 +178,6 @@ def handle_update(update):
         })
         return
 
-    # Har yangi xabar adminга xabar
     notify_admin(chat_id, username, text, needs_help=False)
 
     history = conversations.get(chat_id, [])
@@ -193,10 +186,9 @@ def handle_update(update):
 
     try:
         reply = claude_reply(history)
-        
-        # Agar bot bilmasa — adminga xabar
+
         if "[ADMIN_KERAK:" in reply:
-            reply_clean = reply.replace("[ADMIN_KERAK: bu savol bo'yicha qo'shimcha ma'lumot kerak]", "").strip()
+            reply_clean = reply.split("[ADMIN_KERAK:")[0].strip()
             notify_admin(chat_id, username, text, needs_help=True)
             tg_request("sendMessage", {
                 "chat_id": chat_id,
@@ -217,10 +209,10 @@ def handle_update(update):
         })
 
 def main():
-    print("Profit Stone bot v7 ishga tushdi...")
+    print("Profit Stone bot v8 ishga tushdi...")
     tg_request("sendMessage", {
         "chat_id": ADMIN_ID,
-        "text": "✅ Profit Stone bot ishga tushdi!\n\nMijozlar yozsa — xabar keladi.\nRasm yuborish uchun rasmni yuboring.\nMijozga javob: /reply [ID] [javob matni]"
+        "text": "✅ Profit Stone bot ishga tushdi! (v8 - jamoa qo'shildi)"
     })
     offset = None
     while True:
@@ -236,41 +228,6 @@ def main():
                 offset = update["update_id"] + 1
         except Exception as e:
             print(f"Xato: {e}")
-            time.sleep(3)
-
-if __name__ == "__main__":
-    main()
-    try:
-        reply = claude_reply(history)
-        history.append({"role": "assistant", "content": reply})
-        if len(history) > 20:
-            history = history[-20:]
-        conversations[chat_id] = history
-        tg_request("sendMessage", {"chat_id": chat_id, "text": reply})
-    except Exception as e:
-        print(f"Xato: {e}")
-        tg_request("sendMessage", {
-            "chat_id": chat_id,
-            "text": "Kichik nosozlik. Qayta yozing yoki qo'ng'iroq qiling: +998 97 071 77 67"
-        })
-
-def main():
-    print("Profit Stone bot ishga tushdi (v3)...")
-    offset = None
-    while True:
-        params = {"timeout": 30}
-        if offset:
-            params["offset"] = offset
-        try:
-            url = f"{BASE_URL}/getUpdates?" + urllib.parse.urlencode(params)
-            with urllib.request.urlopen(url, timeout=35) as r:
-                data = json.loads(r.read())
-            for update in data.get("result", []):
-                handle_update(update)
-                offset = update["update_id"] + 1
-        except Exception as e:
-            print(f"Xato: {e}")
-            import time
             time.sleep(3)
 
 if __name__ == "__main__":
